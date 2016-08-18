@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+    <head>
+      <title>Hangman</title>
+      <link rel="stylesheet" href="style/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+      
+
+      <div id="menu"></div>
+
+      <div id="hangmanContainer">
+      </div>
+
+      <div id='makeContainer'></div>
+      </div>
+
+      <div id="gameOver">
+      </div>
+
+      <div id='formContainer'></div>
+
+<!-- FIREBASE -->      
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAkakUBD-JN-3tPf_r1me9TFG3iF-Ry0Ro",
+        authDomain: "hangman-e2c53.firebaseapp.com",
+        databaseURL: "https://hangman-e2c53.firebaseio.com",
+        storageBucket: "hangman-e2c53.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+
+      <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+      <!--<script type="text/javascript" src="js/hangman.js"></script>-->
+
+<!-- FORM TEMPLATE-->
+<script id="form-template" type="text/x-handlebars-template">
+      {{#if loggedIn}}
+        <div id="commentForm">
+        <input id="signOut" type="submit" value="SIGN OUT {{user.email}}" />
+          <ul id='stats'>
+            <li>GAMES WON: {{score.won}}</li>
+            <li>GAMES LOST: {{score.lost}}</li>
+          </ul>
+        </div>
+      {{else}}
+        <div id="registerLoginForm">
+          <p>login or register to keep score</p>
+          <input name="email" type="email" placeholder="Email Address" />
+          <input name="password" type="password" placeholder="Password" />
+          <input id="register" type="submit" value="REGISTER" />
+          <input id="login" type="submit" value="LOGIN" />
+        </div>
+      {{/if}}
+    </script>
+
+<!-- MENU TEMPLATE
+
+ <button id='playRandom'>Play Random</button>
+        <button id='makeOne'>Make One For A Friend</button>-->
+      <script type="text/x-handlebars-template" id="menu-template">
+      <h2>HANGMAN</h2>
+       
+        <button class='levels' id='easy'>EASY</button>
+        <button class='levels' id='medium'>MEDIUM</button>
+        <button class='levels' id='hard'>HARD</button>
+        </br>
+        <img src='img/lose.png'></img>
+      </script>
+
+
+<!-- GAME TEMPLATE -->
+    <script type="text/x-handlebars-template" id="game-template">
+     <button id='newGame'>NEW GAME</button>
+     <img src='{{imgsrc}}'></img>
+
+     <ul id="guesses">
+        {{#each guesses}}
+            <li>{{name}}</li>
+        {{/each}}
+      </ul>
+
+      <ul id="letters">
+        {{#each alphabet}}
+          <li class="{{#if unguessed}}unguessed{{/if}}">
+              <p class='letter'>{{name}}</p>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+
+<!-- GAME OVER TEMPLATE -->
+  <script type="text/x-handlebars-template" id="over-template">
+    
+      <h2>{{#if win}}YOU WIN!{{else if lose}}YOU LOSE{{/if}}</h2>
+      <img src='{{imgsrc}}'></img>
+      <h3>the word was {{randomWord}}.</h3>
+      <button id='playAgain'>Play Again?</button>
+  </script>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/hangman.js"></script>
+
+    </body>
+</html>

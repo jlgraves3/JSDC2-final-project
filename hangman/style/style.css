@@ -1,0 +1,213 @@
+body {
+	font-family: 'Allerta Stencil', sans-serif;
+	margin: 0;
+}
+
+h2 {
+	font-size: 30px;
+	padding-top: 20px;
+}
+
+button {
+	font-family: 'Oswald', sans-serif;
+	padding: 10px;
+	background: black;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+}
+button:hover {
+	background: white;
+	color: black;
+	cursor: pointer;
+}
+
+li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border-radius: 20px;
+}
+
+
+li p {
+	padding: 5px;
+	margin: 0px;
+} 
+
+#formContainer {
+	margin-bottom: 10px;
+	margin-left: 20px;
+	font-size: 12px;
+	position: fixed;
+	bottom: 0;
+}
+#formContainer p {
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+#register {
+	width: 100px;
+}
+#register:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+#login {
+	width: 100px;
+}
+#login:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+#signOut:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+} 
+
+#formContainer input {
+	font-family: 'Oswald', sans-serif;
+	padding: 5px;
+	background: white;
+	color: black;
+	border: 0;
+}
+#menu {
+	text-align: center;
+	border-radius: 20px;
+	background: #5CC9DA;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#menu button {
+	font-size: 16px;
+	margin-left: 10px;
+	width: 20%;
+}
+
+img {
+	margin: 10px;
+}
+
+#makeContainer {
+	text-align: center;
+	border-radius: 20px;
+	background: #5CC9DA;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#makeContainer button{
+	font-size: 16px;
+	margin: 10px;
+	margin-bottom: 25px;
+	width: 100px;
+	padding: 10px;
+}
+
+#wordInput {
+	font-size: 20px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 0;
+}
+
+
+#hangmanContainer {
+	position: static;
+	width: 80%;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+#newGame {
+	position: fixed;
+	right: 15px;
+	top: 10px;
+	font-size: 14px;
+	padding: 10px;
+	width: 100px;
+}
+
+
+#guesses li {
+	display: inline;
+	text-decoration: underline;
+	font-size: 32px;
+	margin: 0;
+	padding: 0;
+}
+
+#guesses {
+	margin-top: -10px;
+}
+
+#letters {
+	font-size: 24px;
+	position: static;
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: rgba(0,0,0,0.25);
+	border-radius: 20px;
+	background: #5CC9DA;
+}
+
+#guesses li {
+}
+.unguessed {
+	color: black;
+	font-style: normal;
+}
+
+.unguessed:hover {
+	color: white;
+}
+
+#gameOver {
+	text-align: center;
+	border-radius: 20px;
+	background: #5CC9DA;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#gameOver h2 {
+	font-size: 36px;
+	margin-bottom: 0;
+}
+
+#gameOver img {
+	margin-bottom: 0;
+}
+
+
+#playAgain {
+	font-size: 16px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+#stats {
+	position: fixed;
+	top: 0px;
+	margin: 0 auto;
+	text-align: center;
+	float: center;
+	width: 80%;
+}
+#stats li{
+	margin-left: 40px;
+	margin-right: 20px;
+	text-align: center;
+}
